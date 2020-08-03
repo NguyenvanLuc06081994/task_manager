@@ -30,11 +30,11 @@ Route::prefix('customers')->group(function(){
 
     Route::get('{id}/edit', 'CustomerController@edit')->name('customers.edit');
 
-    Route::patch('{id}/update', function () {
+    Route::post('{id}/update', function () {
         // xử lý lưu dữ liệu thông tin khách hàng được chỉnh sửa thông qua PATCH từ form
     });
 
-    Route::delete('{id}', 'CustomerController@destroy')->name('customers.delete');
+    Route::get('{id}', 'CustomerController@destroy')->name('customers.delete');
 });
 Route::get('/',function (){
     return view('welcome');
